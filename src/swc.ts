@@ -284,7 +284,7 @@ export async function loadSwc(version: string): Promise<SwcModule> {
     : 'wasm.js'
   const module: SwcModule = await import(
     /* webpackIgnore: true */
-    `https://cdn.jsdelivr.net/npm/${packageName}@${version}/${entryFileName}`
+    `https://unpkg.com/${packageName}@${version}/${entryFileName}`
   )
   await module.default()
   return module
