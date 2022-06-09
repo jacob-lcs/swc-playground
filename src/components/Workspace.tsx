@@ -14,6 +14,10 @@ import VersionSelect from './VersionSelect'
 import InputEditor from './InputEditor'
 import OutputEditor from './OutputEditor'
 
+loader.config({
+  paths: { vs: 'https://unpkg.com/monaco-editor@0.33.0/min/vs/' },
+})
+
 const Main = styled.main`
   display: grid;
   padding: 1em;
