@@ -72,7 +72,9 @@ export type EsVersion =
   | "es2019"
   | "es2020"
   | "es2021"
-  | "es2022";
+  | "es2022"
+  | "es2023"
+  | "es2024";
 
 export type ModuleOptions =
   | {
@@ -363,6 +365,28 @@ function handleSwcError(error: unknown): Err<string> {
   } else {
     return Err(String(error));
   }
+}
+
+type StripTypeError = Record<"code" | "message", string>;
+
+function isStripTypeError(error: unknown): error is StripTypeError {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "code" in error &&
+    "message" in error
+  );
+}
+
+type StripTypeError = Record<"code" | "message", string>;
+
+function isStripTypeError(error: unknown): error is StripTypeError {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "code" in error &&
+    "message" in error
+  );
 }
 
 export function stripTypes({

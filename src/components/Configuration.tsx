@@ -302,6 +302,8 @@ export default function Configuration(props: Props) {
               <option value="es2020">ES2020</option>
               <option value="es2021">ES2021</option>
               <option value="es2022">ES2022</option>
+              <option value="es2023">ES2023</option>
+              <option value="es2024">ES2024</option>
             </Select>
           </FormControl>
           <FormControl>
