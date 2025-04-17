@@ -362,20 +362,11 @@ function handleSwcError(error: unknown): Err<string> {
     return Err(error);
   } else if (error instanceof Error) {
     return Err(`${error.toString()}\n\n${error.stack}`);
+  } else if (isStripTypeError(error)) {
+    return Err(`${error.code}\n\n${error.message}`);
   } else {
     return Err(String(error));
   }
-}
-
-type StripTypeError = Record<"code" | "message", string>;
-
-function isStripTypeError(error: unknown): error is StripTypeError {
-  return (
-    typeof error === "object" &&
-    error !== null &&
-    "code" in error &&
-    "message" in error
-  );
 }
 
 type StripTypeError = Record<"code" | "message", string>;

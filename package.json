@@ -4,7 +4,7 @@
   "description": "swc playground",
   "private": true,
   "scripts": {
-    "start": "next start",
+    "start": "next start -p 3002",
     "build": "next build",
     "dev": "next dev",
     "lint": "tsc -p . && eslint --ext=ts,tsx src",
